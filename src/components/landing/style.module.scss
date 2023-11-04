@@ -1,0 +1,25 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  header {
+    overflow: hidden;
+  }
+  h2 {
+    font-size: 89px;
+    font-weight: 300;
+    span {
+      letter-spacing: -10px !important;
+    }
+  }
+  p {
+    margin-top: 32px;
+    color: var(--neutral-200);
+    max-width: 400px;
+    line-height: 180%;
+  }
+}
