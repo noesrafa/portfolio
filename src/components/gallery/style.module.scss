@@ -12,7 +12,7 @@
     position: relative;
     height: 100%;
     width: 25%;
-    // min-width: 250px;
+    min-width: 330px;
     display: flex;
     flex-direction: column;
     gap: 2vw;
@@ -22,9 +22,11 @@
       position: relative;
       border-radius: 32px;
       overflow: hidden;
+    //   background-color: var(--black);
       img {
         clip-path: inset(2px);
         object-fit: cover;
+        object-position: center center;
         height: 100%;
         width: 100%;
         object-position: top;

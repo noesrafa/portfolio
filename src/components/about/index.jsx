@@ -18,12 +18,12 @@ const About = () => {
       scrollTrigger: {
         trigger: section.current,
         start: "top 90%",
-        end: "top+=300px bottom",
+        end: "top+=400px bottom",
         scrub: 0.5,
-        markers: true,
+        // markers: true,
       },
       backgroundColor: "#dde0e9",
-      duration: 3,
+      duration: 4,
       scale: 1,
     });
   }, []);
