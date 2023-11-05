@@ -17,17 +17,28 @@ const About = () => {
 
     let tl = gsap.timeline();
 
-    tl.to(section.current, {
+    tl.to("body", {
       scrollTrigger: {
         trigger: section.current,
-        start: "top 90%",
-        end: "top+=400px bottom",
+        start: "top+=300px 90%",
+        end: "top+=750px bottom",
         scrub: 0.5,
         // markers: true,
       },
       backgroundColor: "#dde0e9",
       duration: 4,
-      scale: 1,
+      // scale: 1,
+    });
+
+    tl.to(section.current, {
+      scrollTrigger: {
+        trigger: section.current,
+        start: "top+=300px 90%",
+        end: "top+=750px bottom",
+        scrub: 0.5,
+        // markers: true,
+      },
+      opacity: 1,
     });
   }, []);
 

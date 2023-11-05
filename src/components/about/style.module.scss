@@ -1,7 +1,7 @@
 .container {
   border-radius: 64px 64px 0 0;
   margin-top: 200px;
-  transform: scale(0.8);
+  opacity: 0;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -107,7 +107,7 @@
   .container {
     padding: 128px 16px 16px 16px;
   }
-  
+
   .header {
     h4 {
       font-size: 48px;
@@ -134,5 +134,9 @@
       font-size: 20px;
       line-height: 34px;
     }
+  }
+
+  .circleContainer {
+    display: none;
   }
 }
