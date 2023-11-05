@@ -1,47 +1,49 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import SplitType from "split-type";
 import Styles from "./style.module.scss";
+import { motion } from "framer-motion";
+import { useScroll } from "framer-motion";
 
 const Landing = () => {
-  const titleTop = useRef(null);
-  const titleBottom = useRef(null);
+  const { scrollYProgress } = useScroll();
 
-  useEffect(() => {
-    let title1 = new SplitType(titleTop.current);
-    let chars1 = title1.chars;
-
-    const animation = (delay) => {
-      return {
-        yPercent: 180,
-        stagger: 0.01,
-        ease: "expo",
-        duration: 0.3,
-        delay: delay,
-      };
-    };
-
-    gsap.from(chars1, animation(0.1));
-
-    let title2 = new SplitType(titleBottom.current);
-    let chars2 = title2.chars;
-
-    gsap.from(chars2, animation(0.2));
-  }, []);
+  const animation = {
+    start: {
+      y: 30,
+      opacity: 0,
+      // scale: 0.9,
+    },
+    end: {
+      y: 0,
+      opacity: 1,
+      // scale: 1,
+    },
+    transition: (delay) => ({
+      type: "inertia",
+      delay: delay,
+      default: { duration: 0.3 },
+    }),
+  };
 
   return (
     <section className={Styles.container}>
-      <header>
-        <h2 ref={titleTop}>Hi, I am Rafael.</h2>
-        <h2 ref={titleBottom}>
+      <motion.header
+        initial={animation.start}
+        whileInView={animation.end}
+        transition={animation.transition(0.1)}
+      >
+        <h2>Hi, I am Rafael.</h2>
+        <h2>
           Designer <span>{"<>"}</span> Developer
         </h2>
-      </header>
-      <p>
+      </motion.header>
+      <motion.p
+        initial={animation.start}
+        whileInView={animation.end}
+        transition={animation.transition(0.2)}
+      >
         A versatile professional who has transitioned from 3D artist to UX
         designer. With a strong background in prototyping and testing digital
         products.
-      </p>
+      </motion.p>
     </section>
   );
 };

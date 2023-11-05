@@ -13,7 +13,8 @@
     font-size: 89px;
     font-weight: 300;
     span {
-      letter-spacing: -10px !important;
+      margin-right: 10px;
+      // letter-spacing: -10px !important;
     }
   }
   p {
@@ -22,4 +23,10 @@
     max-width: 400px;
     line-height: 180%;
   }
+}
+
+.mask {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
 }
