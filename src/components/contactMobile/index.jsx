@@ -23,12 +23,14 @@ export default function ContactMobile() {
           Let's work <br /> together
         </div>
         <div className={styles.buttons}>
-          <RoundedButton>
-            <p>noesrafa@gmail.com</p>
-          </RoundedButton>
-          <RoundedButton>
-            <p>+52 55 2998 5379</p>
-          </RoundedButton>
+          <div className={styles.wrapper}>
+            <RoundedButton>
+              <p>noesrafa@gmail.com</p>
+            </RoundedButton>
+            <RoundedButton>
+              <p>+52 55 2998 5379</p>
+            </RoundedButton>
+          </div>
           <div backgroundColor={"#774FE9"} className={styles.button}>
             <p>Contact</p>
           </div>

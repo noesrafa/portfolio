@@ -61,7 +61,9 @@ function App() {
         <Description />
         {windowWidth > 768 ? <Projects /> : <ProjectsMobile />}
         <About />
-        <div style={{ width: "100%", height: 500, background: "#141516" }} />
+        {windowWidth > 768 && (
+          <div style={{ width: "100%", height: 500, background: "#141516" }} />
+        )}
         {windowWidth > 768 ? <Contact /> : <ContactMobile />}
       </main>
     </Layout>

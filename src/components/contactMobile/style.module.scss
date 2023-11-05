@@ -79,7 +79,15 @@
     position: relative;
   }
   &:hover {
-    background-color: #774FE9;
+    background-color: #774fe9;
+  }
+}
+
+.wrapper {
+  display: flex;
+  div {
+    padding: 32px 10px;
+    white-space: nowrap;
   }
 }
 
@@ -95,7 +103,7 @@
 
 @media (max-width: 678px) {
   .contact {
-    padding: 16px;
+    padding: 100px 16px 16px 16px;
     height: 100%;
   }
 
