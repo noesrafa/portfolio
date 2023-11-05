@@ -18,36 +18,32 @@ import ProjectsMobile from "./components/projectsMobile";
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const locomotion = async () => {
     const lenis = new Lenis();
 
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
-    (async () => {
-      setTimeout(() => {
-        setIsLoading(false);
-        document.body.style.cursor = "default";
-        window.scrollTo(0, 0);
-      }, 2000);
-    })();
-
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = "default";
+      window.scrollTo(0, 0);
+    }, 2000);
     requestAnimationFrame(raf);
-  }, []);
-
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  };
 
   useEffect(() => {
-    // Función para actualizar el ancho de la ventana cuando cambie el tamaño de la pantalla
+    if (window.innerWidth > 768) {
+      locomotion();
+    }
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-
-    // Agregar un event listener para el evento "resize"
     window.addEventListener("resize", handleResize);
 
-    // Limpieza del event listener cuando el componente se desmonta
     return () => {
       window.removeEventListener("resize", handleResize);
     };
