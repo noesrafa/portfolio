@@ -14,6 +14,7 @@ import About from "./components/about";
 import Lenis from "@studio-freight/lenis";
 import Contact from "./components/contact";
 import ProjectsMobile from "./components/projectsMobile";
+import ContactMobile from "./components/contactMobile";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,7 +62,7 @@ function App() {
         {windowWidth > 768 ? <Projects /> : <ProjectsMobile />}
         <About />
         <div style={{ width: "100%", height: 500, background: "#141516" }} />
-        <Contact />
+        {windowWidth > 768 ? <Contact /> : <ContactMobile />}
       </main>
     </Layout>
   );
