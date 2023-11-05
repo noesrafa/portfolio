@@ -29,9 +29,9 @@ export default function Contact() {
           <RoundedButton>
             <p>+52 55 2998 5379</p>
           </RoundedButton>
-          <RoundedButton backgroundColor={"#774FE9"} className={styles.button}>
+          <div backgroundColor={"#774FE9"} className={styles.button}>
             <p>Contact</p>
-          </RoundedButton>
+          </div>
         </div>
       </div>
       <div className={styles.bottom}>

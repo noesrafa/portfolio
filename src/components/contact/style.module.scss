@@ -70,12 +70,16 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 250ms;
   p {
     margin: 0px;
     font-size: 16px;
     font-weight: 300;
-    z-index: 2;
+    z-index: 1;
     position: relative;
+  }
+  &:hover {
+    background-color: #774FE9;
   }
 }
 
@@ -98,7 +102,7 @@
   .top {
     margin-bottom: 100px;
   }
-  
+
   .header {
     font-size: 48px;
     flex-direction: column;
