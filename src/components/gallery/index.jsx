@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
 import { useTransform, useScroll, motion } from "framer-motion";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 const images = [
   "1.jpg",
@@ -19,6 +21,29 @@ const images = [
 ];
 
 export default function Home() {
+  const section = useRef(null);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    let tl = gsap.timeline();
+
+    tl.to(section.current, {
+      scrollTrigger: {
+        trigger: section.current,
+        start: "top 90%",
+        end: "top+=400px bottom",
+        scrub: 0.5,
+        // markers: true,
+      },
+      // backgroundColor: "#dde0e9",
+      duration: 4,
+      scale: 1,
+    });
+  }, []);
+
+  const container = useRef(null);
+
   const gallery = useRef(null);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -33,8 +58,6 @@ export default function Home() {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
   useEffect(() => {
-    
-
     const resize = () => {
       setDimension({ width: window.innerWidth, height: window.innerHeight });
     };
@@ -48,7 +71,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} ref={section}>
       <div ref={gallery} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />

@@ -1,9 +1,5 @@
-.main {
-  // margin-bottom: 200px;
-}
-
 .container {
-  border-radius: 32px 32px 0 0;
+  border-radius: 64px 64px 0 0;
   margin-top: 200px;
   transform: scale(0.8);
   display: flex;
@@ -65,9 +61,8 @@
   background-color: var(--black);
   color: var(--white);
   display: flex;
-  justify-content: center;
-  gap: 200px;
-  padding: 100px 0;
+  justify-content: space-around;
+  padding: 100px 100px;
   border-radius: 32px;
   h6 {
     font-size: 24px;
@@ -90,10 +85,54 @@
   .circle {
     height: 1550%;
     width: 100%;
-    border-radius: 0 0 50% 50%;
+    border-radius: 0 0 64px 64px;
     background-color: #dde0e9;
     z-index: 1;
     position: absolute;
     box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+  }
+}
+
+@media (max-width: 1200px) {
+  .available {
+    flex-direction: column;
+    gap: 64px;
+  }
+  .divider {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 128px 16px 16px 16px;
+  }
+  
+  .header {
+    h4 {
+      font-size: 48px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  .process {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    row-gap: 64px;
+    span {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .available {
+    padding: 64px 32px;
+    gap: 32px;
+    li {
+      font-size: 20px;
+      line-height: 34px;
+    }
   }
 }

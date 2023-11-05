@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .burger {
     width: 100%;
     position: relative;
@@ -51,6 +51,16 @@
     &::before {
       transform: rotate(-45deg);
       top: 0px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    padding: 00px;
+    .button {
+      width: 64px;
+      height: 64px;
     }
   }
 }

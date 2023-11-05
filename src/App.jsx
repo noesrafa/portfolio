@@ -13,6 +13,7 @@ import About from "./components/about";
 
 import Lenis from "@studio-freight/lenis";
 import Contact from "./components/contact";
+import ProjectsMobile from "./components/projectsMobile";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -35,6 +36,23 @@ function App() {
     requestAnimationFrame(raf);
   }, []);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Función para actualizar el ancho de la ventana cuando cambie el tamaño de la pantalla
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Agregar un event listener para el evento "resize"
+    window.addEventListener("resize", handleResize);
+
+    // Limpieza del event listener cuando el componente se desmonta
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <Layout>
       <main className={styles.main}>
@@ -44,9 +62,9 @@ function App() {
         <Landing />
         <Gallery />
         <Description />
-        <Projects />
+        {windowWidth > 768 ? <Projects /> : <ProjectsMobile />}
         <About />
-        <div style={{width: "100%", height: 500, background: '#141516'}}/>
+        <div style={{ width: "100%", height: 500, background: "#141516" }} />
         <Contact />
       </main>
     </Layout>
