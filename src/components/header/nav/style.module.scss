@@ -37,3 +37,12 @@
     }
   }
 }
+
+@media (max-width: 678px) {
+  .menu {
+    width: 100%;
+    .body {
+      padding: 32px;
+    }
+  }
+}
