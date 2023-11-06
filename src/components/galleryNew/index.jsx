@@ -70,7 +70,7 @@ export default function GalleryNew() {
       trigger: section.current,
       start: "top bottom",
       end: "bottom top",
-      scrub: 1,
+      scrub: 0.001,
       // markers: true,
     };
 
