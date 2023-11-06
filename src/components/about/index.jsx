@@ -21,7 +21,7 @@ const About = () => {
       scrollTrigger: {
         trigger: section.current,
         start: "top 50%",
-        end: "+=250",
+        end: "+=150",
         scrub: 0.5,
         // markers: true,
       },
@@ -33,11 +33,12 @@ const About = () => {
     tl.to(section.current, {
       scrollTrigger: {
         trigger: section.current,
-        start: "top+=300px 90%",
-        end: "top+=750px bottom",
+        start: "top 50%",
+        end: "+=150",
         scrub: 0.5,
         // markers: true,
       },
+      scale: 1,
       opacity: 1,
     });
   }, []);

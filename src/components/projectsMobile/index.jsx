@@ -146,12 +146,13 @@ const Project = ({ img, title, link, category, year }) => {
       start: "top 90%",
       end: "+=200",
       scrub: 0.5,
-    //   markers: true,
+      //   markers: true,
     };
 
     const animationConfig = (height) => ({
       scrollTrigger: scrollConfig,
       y: height,
+      scale: 1,
       opacity: 1,
       ease: "none",
     });
