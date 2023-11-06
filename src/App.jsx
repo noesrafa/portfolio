@@ -15,6 +15,7 @@ import Lenis from "@studio-freight/lenis";
 import Contact from "./components/contact";
 import ProjectsMobile from "./components/projectsMobile";
 import ContactMobile from "./components/contactMobile";
+import GalleryNew from "./components/galleryNew";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,11 +29,7 @@ function App() {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
-    setTimeout(() => {
-      setIsLoading(false);
-      document.body.style.cursor = "default";
-      window.scrollTo(0, 0);
-    }, 2000);
+    document.body.style.cursor = "default";
     requestAnimationFrame(raf);
   };
 
@@ -40,6 +37,24 @@ function App() {
     if (window.innerWidth > 768) {
       locomotion();
     }
+  }, []);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const LocomotiveScroll = (await import("locomotive-scroll")).default;
+  //     const locomotiveScroll = new LocomotiveScroll();
+
+  //     locomotiveScroll();
+
+  //     setTimeout(() => {
+  //       setIsLoading(false);
+  //       document.body.style.cursor = "default";
+  //       window.scrollTo(0, 0);
+  //     }, 2000);
+  //   })();
+  // }, []);
+
+  useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
@@ -57,7 +72,8 @@ function App() {
           {isLoading && <Preloader />}
         </AnimatePresence> */}
         <Landing />
-        <Gallery />
+        <GalleryNew />
+        {/* <Gallery /> */}
         <Description />
         {windowWidth > 768 ? <Projects /> : <ProjectsMobile />}
         <About />
