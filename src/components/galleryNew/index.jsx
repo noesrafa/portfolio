@@ -4,6 +4,7 @@ import styles from "./style.module.scss";
 import { useTransform, useScroll, motion } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { useWidth } from "../../hooks/useWidth";
 
 const images = [
   "1.jpg",
@@ -28,20 +29,8 @@ export default function GalleryNew() {
   const gallery3 = useRef(null);
   const gallery4 = useRef(null);
 
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
-
-    window.addEventListener("resize", resize);
-    resize();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+  const width = useWidth();
+  const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -59,8 +48,6 @@ export default function GalleryNew() {
     });
   }, []);
 
-  const { scrollYProgress } = useScroll();
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -70,26 +57,29 @@ export default function GalleryNew() {
       trigger: section.current,
       start: "top bottom",
       end: "bottom top",
-      scrub: 0.001,
+      scrub: 0.5,
+      // markers: true,
+    };
+
+    const scrollMobileConfig = {
+      trigger: section.current,
+      start: "top 90%",
+      end: "+=1500",
+      scrub: 0.5,
       // markers: true,
     };
 
     const animationConfig = (height) => ({
-      scrollTrigger: scrollConfig,
+      scrollTrigger: width > 768 ? scrollConfig : scrollMobileConfig,
       y: height,
       ease: "none",
     });
 
     tl.to(gallery1.current, animationConfig(2000));
-
     tl.to(gallery2.current, animationConfig(1500));
-
     tl.to(gallery3.current, animationConfig(1100));
-
     tl.to(gallery4.current, animationConfig(1300));
-  });
-
-  console.log(scrollYProgress.current);
+  }, []);
 
   return (
     <main className={styles.main} ref={section}>
