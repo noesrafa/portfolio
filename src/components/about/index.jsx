@@ -20,7 +20,7 @@ const About = () => {
     tl.to("body", {
       scrollTrigger: {
         trigger: section.current,
-        start: "top 50%",
+        start: "top 60%",
         end: "+=150",
         scrub: 0.5,
         // markers: true,
@@ -34,7 +34,7 @@ const About = () => {
       scrollTrigger: {
         trigger: section.current,
         start: "top 50%",
-        end: "+=150",
+        end: "+=200",
         scrub: 0.5,
         // markers: true,
       },
