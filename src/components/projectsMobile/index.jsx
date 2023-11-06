@@ -143,7 +143,7 @@ const Project = ({ img, title, link, category, year }) => {
 
     const scrollConfig = {
       trigger: project.current,
-      start: "top 80%",
+      start: "top 90%",
       end: "+=200",
       scrub: 0.5,
     //   markers: true,
