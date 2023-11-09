@@ -19,7 +19,7 @@ export default function Contact() {
     <motion.div style={{ y }} ref={container} className={styles.contact}>
       <div className={styles.top}>
         <div className={styles.header}>
-          <img src={"/images/background.jpg"} alt="profile" />
+          <img src={"/me.jpg"} alt="profile" />
           Let's work together
         </div>
         <div className={styles.buttons}>

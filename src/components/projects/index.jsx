@@ -7,24 +7,24 @@ import Project from "./project";
 
 const projects = [
   {
-    title: "C2 Montreal",
-    src: "c2montreal.png",
-    color: "#000000",
+    title: "Heru App",
+    src: "heru.webp",
+    color: "#DDEEFD",
   },
   {
-    title: "Office Studio",
-    src: "officestudio.png",
-    color: "#8C8C8C",
+    title: "Pefai Builder",
+    src: "pefai.webp",
+    color: "#E3D9FF",
   },
   {
-    title: "Locomotive",
-    src: "locomotive.png",
-    color: "#EFE8D3",
+    title: "DriftLead",
+    src: "driftlead.webp",
+    color: "#29282C",
   },
   {
-    title: "Silencio",
-    src: "silencio.png",
-    color: "#706D63",
+    title: "Aesthetics",
+    src: "aesthetics.webp",
+    color: "#3DAF9C",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function Projects() {
                 >
                   <img
                     src={`/images/${src}`}
-                    width={300}
+                    width={430}
                     height={0}
                     alt="image"
                   />

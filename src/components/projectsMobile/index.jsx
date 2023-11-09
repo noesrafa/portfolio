@@ -105,36 +105,40 @@ import { useEffect } from "react";
 
 const projects = [
   {
-    img: "/images/silencio.png",
-    title: "Silencio",
+    img: "/images/heru.webp",
+    title: "Heru App",
     link: "https://silencio.com.co/",
-    category: "Branding",
-    year: "2020",
+    category: "Design & Development",
+    year: "2024",
+    color: "#DDEEFD",
   },
   {
-    img: "/images/silencio.png",
-    title: "Silencio",
+    img: "/images/pefai.webp",
+    title: "Pefai Builder",
     link: "https://silencio.com.co/",
-    category: "Branding",
-    year: "2020",
+    category: "Design",
+    year: "2023",
+    color: "#E3D9FF",
   },
   {
-    img: "/images/silencio.png",
-    title: "Silencio",
+    img: "/images/driftlead.webp",
+    title: "DriftLead",
     link: "https://silencio.com.co/",
-    category: "Branding",
-    year: "2020",
+    category: "Design",
+    year: "2022",
+    color: "#29282C",
   },
   {
-    img: "/images/silencio.png",
-    title: "Silencio",
-    link: "https://silencio.com.co/",
-    category: "Branding",
-    year: "2020",
+    img: "/images/aesthetics.webp",
+    title: "Aesthetics",
+    link: "aesthetics.webp",
+    category: "Design",
+    year: "2020-2024",
+    color: "#3DAF9C",
   },
 ];
 
-const Project = ({ img, title, link, category, year }) => {
+const Project = ({ img, title, link, category, year, color }) => {
   const project = useRef(null);
 
   useEffect(() => {
@@ -162,7 +166,9 @@ const Project = ({ img, title, link, category, year }) => {
 
   return (
     <div className={Styles.project} ref={project}>
-      <img src={img} alt="background" />
+      <div className={Styles.imgWrapper} style={{ background: color }}>
+        <img src={img} alt="background" />
+      </div>
       <h6>{title}</h6>
       <div className={Styles.divider} />
       <p>
@@ -185,6 +191,7 @@ const ProjectsMobile = () => {
               link={item.link}
               category={item.category}
               year={item.year}
+              color={item.color}
             />
           );
         })}

@@ -16,7 +16,7 @@
   h6 {
     font-size: 32px;
     font-weight: 400;
-    margin-top: 12px;
+    margin-top: 24px;
   }
 
   p {
@@ -25,12 +25,26 @@
     justify-content: space-between;
   }
 
+  // img {
+  //   width: 100%;
+  //   aspect-ratio: 1;
+  //   object-fit: cover;
+  //   border-radius: 32px;
+  // }
+  
   img {
     width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 32px;
   }
+}
+
+.imgWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  // background-color: red;
+  padding: 16px;
+  display: grid;
+  place-items: center;
+  // border-radius: 32px;
 }
 
 .divider {
