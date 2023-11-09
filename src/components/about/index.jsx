@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useEffect } from "react";
-import ArrowRight from "/right-arrow.svg";
+import ArrowRight from "/right-arrow-white.svg";
 import { motion } from "framer-motion";
 import { useScroll } from "framer-motion";
 import { useTransform } from "framer-motion";
@@ -25,7 +25,7 @@ const About = () => {
         scrub: 0.5,
         // markers: true,
       },
-      backgroundColor: "#dde0e9",
+      backgroundColor: "#706E75",
       duration: 4,
       // scale: 1,
     });
