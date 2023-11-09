@@ -33,8 +33,8 @@ const About = () => {
     tl.to(section.current, {
       scrollTrigger: {
         trigger: section.current,
-        start: "top 50%",
-        end: "+=200",
+        start: "top 70%",
+        end: "+=300",
         scrub: 0.5,
         // markers: true,
       },
